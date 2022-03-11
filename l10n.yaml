@@ -1,0 +1,8 @@
+# default values
+arb-dir: lib/l10n
+template-arb-file: app_en.arb
+output-localization-file: app_localizations.dart
+
+# values to be updated
+output-dir: lib/l10n/generated
+synthetic-package: false
