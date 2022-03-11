@@ -15,4 +15,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get hello => 'Hello';
+
+  @override
+  String get bye => 'Bye';
 }
