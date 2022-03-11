@@ -1,6 +1,3 @@
-
-
-
 import 'app_localizations.dart';
 
 /// The translations for Italian (`it`).
@@ -14,8 +11,11 @@ class AppLocalizationsIt extends AppLocalizations {
   String get appTitle => 'Flutter Heroes 2022';
 
   @override
-  String get hello => 'Hello';
+  String get hello => 'Ciao';
 
   @override
   String get bye => 'Bye';
+
+  @override
+  String get ok => 'ok';
 }
