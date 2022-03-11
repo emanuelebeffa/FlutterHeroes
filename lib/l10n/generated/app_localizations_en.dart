@@ -9,4 +9,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get helloWorld => 'Hello, world!';
+
+  @override
+  String get appTitle => 'Flutter Heroes 2022';
 }

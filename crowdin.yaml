@@ -1,0 +1,10 @@
+preserve_hierarchy: true # to maintain the project structure
+pull_request_title: "chore: update translations"
+pull_request_labels:
+  - translations # pull request label title
+
+files:
+  - source: /lib/l10n/app_en.arb # this is needed to the Flutter project
+    dest: app.arb # understand what does this
+    translation: /lib/l10n/app_%two_letters_code%.arb # where translations are copied
+    update_option: update_as_unapproved # to make an admin approve the translations?

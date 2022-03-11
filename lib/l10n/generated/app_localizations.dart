@@ -97,6 +97,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Hello, world!'**
   String get helloWorld;
+
+  /// No description provided for @appTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Flutter Heroes 2022'**
+  String get appTitle;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
