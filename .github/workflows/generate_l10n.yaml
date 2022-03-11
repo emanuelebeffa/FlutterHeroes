@@ -1,0 +1,54 @@
+name: Generate L10n
+
+on:
+  push:
+    branches:
+      - "l10n_**"
+
+concurrency:
+  group: generate-l10n-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  LANG: en_US.UTF-8
+  LC_ALL: en_US.UTF-8
+  LANGUAGE: en_US.UTF-8
+
+jobs:
+  main:
+    name: Main
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+
+      - name: Setup Flutter
+        run: |
+          flutter config --no-analytics
+
+      - name: Install Ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.6'
+
+      - name: Bundle install
+        run: |
+          bundle install --path $HOME/.gem
+
+      - name: Github config
+        run: |
+          git config --global user.email "you@example.com"
+          git config --global user.name "github-actions"
+
+      - name: Generate dart Files
+        run: |
+          bundle exec fastlane generate_files
+
+      - name: Push Changes
+        run: |
+          bundle exec fastlane push_changes

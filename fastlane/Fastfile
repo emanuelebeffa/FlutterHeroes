@@ -1,0 +1,31 @@
+lane :generate_files do
+  Dir.chdir("../") do
+    UI.header "Generate dart files"
+    begin
+      system("flutter gen-l10n arb-dir")
+      system("flutter format lib/l10n")
+    rescue => exception
+      UI.error exception
+    end
+  end
+end
+
+lane :push_changes do
+  Dir.chdir("../") do
+    branch_name = `git rev-parse --abbrev-ref HEAD`
+    branch_name = branch_name[0..-2]
+
+    begin
+      UI.header "git add lib/l10n"
+      system("git add lib/l10n")
+
+      UI.header "git commit"
+      system("git commit -m 'chore: update dart translations files'")
+
+      UI.header "git push"
+      system("git push origin #{branch_name}")
+    rescue => exception
+      UI.error exception
+    end
+  end
+end
