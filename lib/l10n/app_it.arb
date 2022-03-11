@@ -1,4 +1,6 @@
 {
-    "helloWorld": "Hello, world!",
-    "appTitle": "Flutter Heroes 2022"
+    "helloWorld": "Ciao, mondo!",
+    "appTitle": "Flutter Heroes 2022",
+    "hello": "Hello",
+    "bye": "Bye"
 }
