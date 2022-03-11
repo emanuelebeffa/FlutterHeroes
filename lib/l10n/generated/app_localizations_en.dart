@@ -8,8 +8,11 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get helloWorld => 'Hello, world!';
+  String get helloWorld => 'Ciao, mondo!';
 
   @override
   String get appTitle => 'Flutter Heroes 2022';
+
+  @override
+  String get hello => 'Hello';
 }
